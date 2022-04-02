@@ -1,3 +1,13 @@
+git push https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
+
+Best Practices for Collaboration
+		1 - начинай работу с синхронизации
+		2 - избегай крупных масштабных изменений, стремимся к атомарности
+		3 - используй ветвление (мерджи изменения мастера в свою ветку)
+		4 - не используй rebase для изменений на хабе (только локал)
+		5 - делай информативные сообщения коммитов
+
+
 ==========Introduction to Version Control
 
 ####Git init

@@ -1,0 +1,100 @@
+==========Introduction to Version Control
+
+####Git init
+####Git Basics
+
+==========Using Git Locally
+
+####Advanced Git interaction
+	Skipping the Staging Area
+		git commit -a -m "текст" = skip git staging
+		HEAD -> текущая рабочая область (ветка)
+
+	Getting More Information About Our Changes
+		git log -p = развернутый лог (q = exit)
+		git show "номер коммита" = - развернутый лог коммита
+		git log --stat = статус коммита по добавленным/удаленным файлам/строкам
+		git diff = текущие изменения в файлах (unstaged)
+		git diff --staged = текущие изменения в файлах (в stage)
+		git add -p  = покажет текущие изменения перед staging
+
+	Deleting and Renaming Files
+		git rm = перестать отслеживать файл и исключиь из рабочей директории
+		git mv "имя" "имя" = переименовать или переместить (как в линухе)
+		.gitignore = файл с правилами игнорирования файлов (echo filename > .gitignore)
+		изменения в .gitignore так же требуют add и commit
+
+####Undoing Things
+	Undoing Changes Before Committing
+	Amending Commits
+	Rollbacks
+		"git revert" - Новый коммит с изменениями, обратными откатываемому
+			(автоматом добавляет номер отмененного коммита в сообщение)
+		$ git revert HEAD
+
+	Identifying a Commit
+		git show "хэш коммита" - поиск по хэшу коммита (можно по нескольким первым уникальным символам)
+		$ git revert commithashnum
+
+	Git Revert Cheat Sheet
+	https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things
+	https://git-scm.com/docs/git-reset#_examples
+	https://git-scm.com/docs/git-revert
+	https://jwiegley.github.io/git-from-the-bottom-up/3-Reset/4-doing-a-hard-reset.html
+	https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---amend
+
+####Branching and Merging
+	Creating New Branches
+		git branch - список всех веток репо. * помечена текущая ветка рабочего пространства
+		git branch new_branch - создать ветку с именем new_branch на основе значения HEAD
+		git checkout - переключиться на ветку (рабочее пространство приводится в соответствие с выбранной веткой)
+		git checkout new_branch - (звездочка переместится на ветку new_branch)
+		git checkout -b new_branch2 - создать новую ветку и сразу переключиться на нее
+
+	Working with Branches
+		git branch -d - удалить указанную ветку
+		Если удаляемая векта несмержена в мастер - Git ругнется
+		Удалить принудительно git branch -D
+
+	Merging
+		Перейти в ветку master
+		git merge "имя ветки" -вмерджить указанную ветку в мастер
+		2 типа слияния - fast forward (когда есть только дельта) и 
+		по трем точкам (когда разьахались ветки - 3 точки -последние коммиты веток и последний общий) 
+
+	Merge Conflicts
+		после ошибки git merge запускаем git status - детали о конфликте
+		нужно исправить конфликт в каждом файле, запустить git add для подтверждения, 
+		затем git commit или git merge --abort для отмены
+		git log --graph --oneline - показать график и историю мерджей
+
+==========Introduction to Git and GitHub
+
+####Basic Interaction with GitHub
+	Clone
+		git clone url = скачать репо в pwd
+		.md = markdown
+		git push = отправить на хаб
+		git config --global credential.helper cache = включить кэширование пароля (15 мин)
+		git pull - выкачать изменения с хаба
+	This can be useful for keeping your local workspace up to date.
+	https://help.github.com/en/articles/caching-your-github-password-in-git
+	https://help.github.com/en/articles/generating-an-ssh-key
+
+	Using a Remote Repository
+		Перед PUSH нужен fetch (внесение правок из сети  на локал)
+	
+	Working with Remotes
+		при git clone делается копия с origin name
+		git remote -v = показать откуда сетевую часть репо
+		origin  https://github.com/Lmait/Git_Notes.git (fetch)
+		origin  https://github.com/Lmait/Git_Notes.git (push)
+		Обычно одинаковые, но может быть например http на fetch
+		git remote show origin = детальная инфо о источнике
+		git branch -r = удаленный ветки
+		git status покажет инфо по удаленным веткам
+
+	Fetching New Changes
+		git remote show origin == Local out of date - есть изменения на хабе
+		gir fetch для синхронизации - копирует (на локал?) коммиты из веток на хабе
+				

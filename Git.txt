@@ -47,7 +47,8 @@
 	Creating New Branches
 		git branch - список всех веток репо. * помечена текущая ветка рабочего пространства
 		git branch new_branch - создать ветку с именем new_branch на основе значения HEAD
-		git checkout - переключиться на ветку (рабочее пространство приводится в соответствие с выбранной веткой)
+		git checkout - переключиться на ветку (рабочее пространство приводится в соответствие 
+		с выбранной веткой)
 		git checkout new_branch - (звездочка переместится на ветку new_branch)
 		git checkout -b new_branch2 - создать новую ветку и сразу переключиться на нее
 
@@ -96,6 +97,13 @@
 
 	Fetching New Changes
 		git remote show origin == Local out of date - есть изменения на хабе
-		gir fetch для синхронизации - копирует (на локал?) коммиты из веток на хабе
+		git fetch для синхронизации - копирует (на локал?) коммиты из веток на хабе
+		git checkout origin/master = переключиться на ветку с хаба
+		(затем можно сделать из нее ветку на локале) 
 		git log origin/master = лог ветки на хабе
+
+	Updating the Local Repository
+		git pull = fetch + merge = выкачивает ветку и сразу пытается смерджить
+		git log -p -1 = посмотреть изменения после пула
+		git remote update = fetch всех удаленных веток
 				

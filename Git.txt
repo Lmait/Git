@@ -97,4 +97,5 @@
 	Fetching New Changes
 		git remote show origin == Local out of date - есть изменения на хабе
 		gir fetch для синхронизации - копирует (на локал?) коммиты из веток на хабе
+		git log origin/master = лог ветки на хабе
 				

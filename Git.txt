@@ -106,4 +106,14 @@
 		git pull = fetch + merge = выкачивает ветку и сразу пытается смерджить
 		git log -p -1 = посмотреть изменения после пула
 		git remote update = fetch всех удаленных веток
-				
+
+	Solving Conflicts - The Pull-Merge-Push Workflow
+		пытаемся git push - failed
+		git pull - получае конфликт. маркер конфликта ">>>"
+		git log --graph --oneline --all = вывести граф веток
+		git log -p origin/master = посмотреть историю конкретной ветки в деталях
+		правим файл, делаем по не му git add, git commit, git push
+		git log --graph --oneline = смотрим граф слияния
+
+	Pushing Remote Branches
+		git push -u origin refactor = апстрим в ориджин ветка рефактор

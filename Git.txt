@@ -150,3 +150,7 @@ Best Practices for Collaboration
 
 
 ==========Collaboration
+	Squashing Changes
+		git rebase -i master = интерактивный ребэйс
+		https://help.github.com/en/articles/about-pull-request-merges
+		git push -f = force push

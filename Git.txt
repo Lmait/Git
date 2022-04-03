@@ -151,6 +151,21 @@ Best Practices for Collaboration
 
 ==========Collaboration
 	Squashing Changes
+	Pull Requests
+		A pull request is a commit or series of commits that you send to the owner of the repository 
+		so that they incorporate it into their tree
+		
 		git rebase -i master = интерактивный ребэйс
 		https://help.github.com/en/articles/about-pull-request-merges
 		git push -f = force push
+
+	Code Reviews
+		Doing a code review means going through someone else's code, 
+		documentation or configuration and checking that it all makes sense
+		and follows the expected patterns.
+		
+		Code Reviews
+		http://google.github.io/styleguide/
+		https://help.github.com/en/articles/about-pull-request-reviews
+		https://medium.com/osedea/the-perfect-code-review-process-845e6ba5c31
+		https://smartbear.com/learn/code-review/what-is-code-review/

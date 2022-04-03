@@ -10,14 +10,35 @@ Best Practices for Collaboration
 
 ==========Introduction to Version Control
 
-####Git init
-####Git Basics
+####Git init, Git Basics
+	git config -l
+	git config --global user.name ""
+	git config --global user.email ""
+	https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address
+	--global значит - для всех репозиториев (можно елать разные для отдельных репозитриев)
+	git init = создать новый репозиторий
+	git clone = создать копию существующего
+	working tree = область снаружи .git
+	Проект git состоит из 3х частй - Git directory, working tree, staging area
+		Git directory - история всех файлов и изменений
+		working tree - текущее состояние проекта, включая изменения
+		staging area - (или index - файл содержащий всю информацию о следующем коммите)
+	git add - добавить файл в stagin area
+	git status - инфо о working tree и предстоящих изменениях
+	Файлы - tracked or untracked. Tracked = modified, staged or committed
+	git commit = откроет текстовый редактор для сообщения коммита
+	git commit -m "comment" - быстрый коммит 
+
+The Basic Git Workflow:
+	git init -> create file -> git add -> git commit
+	
+
 
 ==========Using Git Locally
 
 ####Advanced Git interaction
 	Skipping the Staging Area
-		git commit -a -m "текст" = skip git staging
+		git commit -a -m "текст" = skip git staging (только уже отслеживаемые файлы)
 		HEAD -> текущая рабочая область (ветка)
 
 	Getting More Information About Our Changes
@@ -180,6 +201,17 @@ Best Practices for Collaboration
 		https://docs.travis-ci.com/user/build-stages/
 
 ========== Summary
+	- Git concepts,typical Git workflow, basic interaction with the service
+	- advanced commands, (skipping the staging area, getting additional info about our commits)
+	- delete and rename files
+	- undo things. (revert unstaged and staged changes, how to amend commits)
+	- how to perform rollbacks, whether from the latest commit or an older one. 
+	- branching. (create, switch to, and delete branches).
+	- merge branches, merge conflicts.
+	- basic interaction with the GitHub,remote repositories and the distributed nature of Git
+	- pull data down from remote repositories, push our local changes to them, 
+	- resolve conflicts that pop-up when our local and remote branches are out of sync. 
+	- rebase. 
 	- collaboration through GitHub,
 	- typical workflow for pull requests, 
 	- code reviews.

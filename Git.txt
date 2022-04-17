@@ -7,6 +7,32 @@ Best Practices for Collaboration
 		4 - не используй rebase для изменений на хабе (только локал)
 		5 - делай информативные сообщения коммитов
 
+Системные настройки хранятся в /etc/gitconfig:
+git config --system
+
+Глобальные настройки для пользователя хранятся в ~/.gitconfig:
+git config --global
+
+Локальные настройки хранятся в репозитории в .git/config:
+git config --local (default)
+
+Настройки нижних уровней перекрывают настройки верхней уровней.
+
+Получение справки:
+$ git help <команда>
+$ git <команда> --help
+$ man git-<команда>
+
+Создание и клонирование репозитория
+–
+Создание репозитория
+$ git init
+
+Клонирование существующего репозитория
+$ git clone https://github.com/libgit2/libgit2
+
+Поддерживаемые протоколы:
+https://, git:// или SSH: user@server:path/to/repo.git
 
 ==========Introduction to Version Control
 
